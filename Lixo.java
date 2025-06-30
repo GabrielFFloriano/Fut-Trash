@@ -91,7 +91,7 @@ public class Lixo {
     }
 
     public void mover(int larguraDaTela, int pontuacao){
-       velocidade = ((pontuacao/100)+1)*direcao;
+       velocidade = ((pontuacao/100)+2)*direcao;
        x -= velocidade;
        
        if (x<=0) {
