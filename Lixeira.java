@@ -15,7 +15,17 @@ public class Lixeira {
     private int largura = 70, altura = 90;
     private Image imagem;
     public static ArrayList<String> urlImages = new ArrayList<>(Arrays.asList("imgs/LixoMetal.png", "imgs/LixoOrganico.png", "imgs/LixoPapel.png", "imgs/LixoPlastico.png", "imgs/LixoVidro.png"));
-    public static Map<Integer, Integer> valoresXY = Map.of(120, 140, 400, 140, 110, 360, 280, 250, 500, 360);
+    public static Map<Integer, Integer> valoresXY;
+    // public static Map<Integer, Integer> valoresXY = Map.of(120, 140, 400, 140, 110, 360, 280, 250, 500, 360);
+    static { // Método compatível com Java 8 para versão 32 bits
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(120, 140);
+        map.put(400, 140);
+        map.put(110, 360);
+        map.put(280, 250);
+        map.put(500, 360);
+        valoresXY = Collections.unmodifiableMap(map);
+    }
 
     public Lixeira(int inicioX, int inicioY, String tipo, String urlImage){
         this.x = inicioX;
